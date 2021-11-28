@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KurilshikAlkash : Enitity
 {
-
+	public bool FireBolla = true;
 	public GameObject FireBoll;
 	public float maxCooldownss = 2;
 	float Cooldownss = 0;
@@ -15,6 +15,7 @@ public class KurilshikAlkash : Enitity
 	private void Update()
 	{
 		CheckCoolDownss();
+		if (FireBolla)
 		Udar();
 	}
 
@@ -32,7 +33,7 @@ public class KurilshikAlkash : Enitity
 	{
 		if (collision.gameObject == Hero.Instance.gameObject)
 		{
-			Hero.Instance.GetDamage();
+			FireBolla = false;
 		}
 	}
 	private void CheckCoolDownss()
